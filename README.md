@@ -1,4 +1,4 @@
-# ⚡ GridShield — Zero Trust Critical Infrastructure Operations Platform
+# ⚡ GridShield - Zero Trust Critical Infrastructure Operations Platform
 
 > **"Trust No One. Verify Everything."**
 > Built at a 24-hour hackathon. Theme: Securing Critical Infrastructure.
@@ -9,19 +9,19 @@
 
 | Resource | Link |
 |---|---|
-| 📊 Presentation (PPT) | _[Insert link here]_ |
-| 🎬 Live Demo Video | _[Insert link here]_ |
-| 🌐 GitHub Repository | _[Insert repo link here]_ |
+| 📊 Presentation (PPT) | _https://docs.google.com/presentation/d/1mExU0XVjUSvXtONfdI9J3Mea4zBpPkOn/edit?usp=sharing&ouid=106407146728459704804&rtpof=true&sd=true_ |
+| 🎬 Live Demo Video | _https://drive.google.com/file/d/1H6PNtZYm48bOmmXZMJ6zPtZDMCnW1T7H/view?usp=sharing_ |
+| 🌐 GitHub Repository | _https://github.com/marvelonps4/Hackathon/_ |
 
 ---
 
 ## 📋 Project Summary
 
-GridShield is a role-based Zero Trust security operations platform built for Victoria's power grid. It simulates real-world critical infrastructure protection across 100 grid locations, 20 zones, and 272 staff — modelled on how actual grid operators, security teams, and engineers coordinate during cyberattacks and physical security incidents.
+GridShield is a role-based Zero Trust security operations platform built for Victoria's power grid. It simulates real-world critical infrastructure protection across 100 grid locations, 20 zones, and 272 staff - modelled on how actual grid operators, security teams, and engineers coordinate during cyberattacks and physical security incidents.
 
 The platform enforces strict role separation across six access levels: Security Officer, Administrator, Junior Engineer, Senior Engineer, Chief Engineer, and Executive Director. Every action is logged. No role can override another. No single person holds all authority.
 
-Two types of attacks are simulated — physical incidents (reported by Security Officers) and digital/cyber incidents (reported by Junior Engineers) — each triggering a pre-defined escalation chain through the hierarchy to the Chief Engineer and Executive Director. Pre-determined attack scenarios fire at timed intervals, complete with cinematic overlays, threat assessments, response steps, and full post-incident analysis reports.
+Two types of attacks are simulated - physical incidents (reported by Security Officers) and digital/cyber incidents (reported by Junior Engineers) - each triggering a pre-defined escalation chain through the hierarchy to the Chief Engineer and Executive Director. Pre-determined attack scenarios fire at timed intervals, complete with cinematic overlays, threat assessments, response steps, and full post-incident analysis reports.
 
 The project integrates live Victorian grid data via the AEMO API, a Node.js/Express REST backend with a full audit log, and a React/Vite frontend with strictly separated dashboards per role. Built with the MERN-adjacent stack (React, Node, Express, RESTful API) in under 24 hours by a team of four.
 
@@ -31,12 +31,12 @@ The project integrates live Victorian grid data via the AEMO API, a Node.js/Expr
 
 ## 👥 Team
 
-| Name | Role in Project | Role in Demo |
+| Name | Role in Project | Role in Demo Video|
 |---|---|---|
-| **Pranav** | Frontend, Integration | Junior Engineer (Alex Kim) |
+| **Pranav** | Frontend, Integration | Junior Engineer |
 | **Raj** | Backend, API | The Hacker |
-| **Sai** | Planning, Presentation | Narrator |
-| **Vedant** | Architecture, Logic | Chief Engineer (Victor Osei) |
+| **Ajithesh Sai** | Planning, Presentation | Narrator |
+| **Vedant** | Architecture, Logic | Chief Engineer |
 
 ---
 
@@ -61,7 +61,7 @@ GridShield/
 │
 ├── client/                     # React frontend (Vite)
 │   ├── src/
-│   │   ├── App.jsx             # Root component — handles login state and attack scheduler
+│   │   ├── App.jsx             # Root component - handles login state and attack scheduler
 │   │   ├── Login.jsx           # Email + password login screen with demo credentials
 │   │   ├── Dashboard.jsx       # All 6 role dashboards, tab routing, attack overlay
 │   │   └── constants.js        # All data: staff, locations, attack scenarios, analysis reports, theme
@@ -83,7 +83,7 @@ The root component. Manages global state (incidents, shifts, lockdowns), handles
 The login screen. Accepts email + password, validates against the demo accounts, and passes the authenticated account object to the app. Includes a collapsible demo credentials panel for easy testing.
 
 **`client/src/Dashboard.jsx`**
-The entire frontend application lives here. Contains the sidebar, top bar, all 6 role-specific dashboards, the cinematic attack overlay, and every tab component. Tab routing is strictly role-gated — no role can access another role's tabs.
+The entire frontend application lives here. Contains the sidebar, top bar, all 6 role-specific dashboards, the cinematic attack overlay, and every tab component. Tab routing is strictly role-gated - no role can access another role's tabs.
 
 **`client/src/constants.js`**
 The single source of truth for all data: 100 grid locations, 272 staff members, 6 demo accounts with credentials, 5 pre-determined attack scenarios (with full analysis reports), colour theme, role definitions, and tab configurations.
@@ -127,7 +127,7 @@ npm -v
 ### Step 1 — Clone the repository
 
 ```bash
-git clone https://github.com/your-username/gridshield.git
+git clone https://github.com/marvelonps4/Hackathon/
 cd gridshield
 ```
 
@@ -192,7 +192,7 @@ export const OPENROUTER_API_KEY = "your-key-here";
 
 Get a free key at [openrouter.ai](https://openrouter.ai) — no credit card required.
 
-If no key is provided, the app runs fully with pre-written threat assessments and incident reports. Nothing breaks.
+If no key is provided, the app runs fully with only threat assessments and incident reports. Nothing breaks.
 
 ---
 
@@ -259,9 +259,9 @@ Base URL: `http://localhost:5000`
 
 ## 🗺️ Grid Coverage
 
-- **100 locations** across Victoria — from Fitzroy to Bairnsdale
-- **20 zones** — each zone covers 5 locations
-- **272 staff** — 10 security officers per zone, 2 junior engineers, 1 senior engineer, 1 chief per 2 zones, 2 executive directors total
+- **100 locations** across Victoria - from Fitzroy to Bairnsdale
+- **20 zones** - each zone covers 5 locations
+- **272 staff** - 10 security officers per zone, 2 junior engineers, 1 senior engineer, 1 chief per 2 zones, 2 executive directors total
 - Real Melbourne suburb names used for authenticity
 
 ---
@@ -283,8 +283,8 @@ Chief Engineer (initiates) → Executive Director (approves or rejects)
 
 ## 📌 Known Limitations
 
-- Data is stored in-memory on the backend — restarting the server resets all incidents and shifts (by design for a hackathon demo)
-- Attack timers reset on logout — re-login to replay the attack sequence
+- Data is stored in-memory on the backend - restarting the server resets all incidents and shifts (by design for a hackathon demo)
+- Attack timers reset on logout - re-login to replay the attack sequence
 - The AI threat assessment feature requires an OpenRouter API key; without it, pre-written assessments are shown instead
 
 ---
@@ -292,8 +292,8 @@ Chief Engineer (initiates) → Executive Director (approves or rejects)
 ## 📜 Licence
 
 Built for educational and hackathon demonstration purposes.
-MIT Licence — free to use, modify, and build upon.
+MIT Licence - free to use, modify, and build upon.
 
 ---
 
-*GridShield — Hackathon 2026 · Team: Pranav, Raj, Sai, Vedant*
+*GridShield - Hackathon 2026 · Team: Pranav, Raj, Sai Ajithest, Vedant*
